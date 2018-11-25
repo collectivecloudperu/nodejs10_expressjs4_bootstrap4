@@ -1,0 +1,67 @@
+extends layout
+
+block content
+
+  nav.navbar.navbar-expand-md.navbar-dark.bg-dark.mb-4
+    a.navbar-brand(href='#') Mi Proyecto
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item
+          a.nav-link(href='/') Home
+        li.nav-item
+          a.nav-link(href='nosotros') Nosotros             
+        li.nav-item
+          a.nav-link(href='servicios') Servicios          
+        li.nav-item.active
+          a.nav-link(href='contacto') 
+           | Contacto
+           span.sr-only (current)
+      form.form-inline.mt-2.mt-md-0
+        input.form-control.mr-sm-2(type='text' placeholder='Buscar' aria-label='Buscar')
+        button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Buscar
+  main.container(role='main')
+    .jumbotron
+      h1 Contacto
+      p.lead
+        | Estás en la página Contacto
+      a.btn.btn-lg.btn-primary(href='#' role='button') Botón &raquo;
+    
+    p.lead
+      | Contactanos por medio del siguiente Formulario:
+
+    .container
+
+    .row
+      .col-md-12
+        form(action='/')
+         .form-group
+          label(for='nya')
+           strong Nombres y Apellidos
+          input#nya.form-control(type='text' aria-describedby='nyaHelp' placeholder='Ingresa tus Nombres y Apellidos', required)
+          small#nyaHelp.form-text.text-muted Por favor, Nombres y Apellidos Completos.
+
+         .form-group
+          label(for='email')
+           strong Email
+          input#email.form-control(type='email' aria-describedby='emailHelp' placeholder='Ingresa tu Email', required)
+          small#emailHelp.form-text.text-muted Tu correo activo.
+
+          .form-group
+          label(for='mensaje')
+           strong Mensaje
+          textarea#comment.form-control(rows='5', required)
+          small#mensajeHelp.form-text.text-muted Tu Mensaje.
+          br  
+          button.btn.btn-primary(type='submit') Enviar
+
+
+    hr
+
+  footer
+  .container
+    div(align='center')
+      | Desarrollado por 
+      a(href='http://www.nubecolectiva.com' target='_blank') Nube Colectiva
+
